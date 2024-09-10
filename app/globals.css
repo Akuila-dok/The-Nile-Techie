@@ -1,33 +1,215 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --text-color: #ffffff; 
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+
+    /* Font variables */
+    --font-inter: 'Inter', sans-serif;
+    --font-ibm-plex-serif: 'IBM Plex Serif', serif;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer base {
+  * {
+    @apply border-border !scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter);
+  }
+  button {
+    @apply active:outline-none;
+  }
+}
+
+/* Font styling for specific elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-ibm-plex-serif);
+}
+
+p, a, span, div {
+  font-family: var(--font-inter);
+}
+
+/* Text styling for client remarks */
+.client-remark {
+  font-family: var(--font-inter);
+  font-size: 0.875rem; /* Adjust font size as needed */
+  line-height: 1.6;
+  color: var(--foreground);
+  text-align: start;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+
+
+.client-remark:hover {
+  transform: scale(1.05);
+  font-size: 1rem; /* Slightly larger on hover */
+}
+
+
+
+/* Modern Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: darkblue;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: black;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+
+  .black-gradient {
+    background: linear-gradient(90deg, #161a31 0%, #06091f 100%);
   }
 }
+
+/* Cursor styles */
+body {
+  cursor: none;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(128, 0, 128, 0.7); /* Transparent purple border */
+  background-color: rgba(128, 0, 128, 0.1); /* Light transparent purple background */
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease-out, opacity 0.15s ease-out;
+}
+
+.custom-cursor__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(128, 0, 128, 0.7); /* Solid purple dot */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the dot inside the circle */
+}
+
+.custom-cursor--hidden {
+  opacity: 0;
+}
+
+.custom-cursor--active {
+  background-color: rgba(128, 0, 128, 0.3); /* Darker purple on click */
+}
+
+.custom-cursor--animate {
+  transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.custom-cursor__dot--scrolling {
+  /* Optional styling when the dot trails during scrolling */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Optional: Add a delay to create a staggered effect */
+.animate-fadeInUp:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.animate-fadeInUp:nth-child(3) {
+  animation-delay: 1s;
+}
+.animate-fadeInUp:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+
