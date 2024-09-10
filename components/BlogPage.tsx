@@ -202,7 +202,6 @@ const BlogPage: React.FC<BlogPageProps> = ({ title, content, categories }) => {
       
       </div>
       <div className='p-5'>
-      <Footer/>
       </div>
     </div>
   )
