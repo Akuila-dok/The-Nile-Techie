@@ -11,14 +11,7 @@ const Client = () => {
       I highly recommend Akuila for any web development work.<br />
       Truly a pleasure working with him!" 😊`
     },
-    {
-      id: 2,
-      name: 'Deng Lual Manyang - Director and CEO of CushTech',
-      text: `🌟 "Akuila exceeded our expectations with the website design for CushTech.<br />
-      His attention to detail and understanding of our needs were impressive.<br />
-      The website has enhanced our online presence and streamlined our client interactions.<br />
-      Fast and effective solutions, we are grateful!" 👌`
-    },
+
     {
       id: 3,
       name: 'Macrae Waithaka - Director and CEO of Macrae Graphics',
@@ -27,10 +20,20 @@ const Client = () => {
       We now save time on client onboarding and project management,<br />
       all thanks to Akuila’s hard work and dedication." 🙌`
     },
+
+    {
+      id: 2,
+      name: 'Deng Lual Manyang - Director and CEO of CushTech',
+      text: `🌟 "Akuila exceeded our expectations with the website design for CushTech.<br />
+      His attention to detail and understanding of our needs were impressive.<br />
+      The website has enhanced our online presence and streamlined our client interactions.<br />
+      Fast and effective solutions, we are grateful!" 👌`
+    },
+  
     {
       id: 4,
-      name: 'MA Achuil - Founder and CEO of Educate US Initiative',
-      text: `🚀 "The Educate US initiative website Akuila built has been a cornerstone of our digital outreach.<br />
+      name: 'Charles Maino - CFO Afritechsgroup',
+      text: `🚀 "The app Akuila and his team built has been a cornerstone of our digital outreach.<br />
       He worked tirelessly to bring our vision to life,<br />
       integrating features that allow seamless communication with our audience.<br />
       The results are fantastic, and we couldn\'t be happier!" 🔥`
