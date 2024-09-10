@@ -10,21 +10,12 @@ import React from 'react'
 const IndustryNews = () => {
   return (
     <>
-    <div className='bg-slate-800 text-white'>
+    <div className='bg-slate-800 overflow-hidden text-white'>
       <BlogPage 
         title="Industry News" 
         content={IndustryNewsContent} 
         categories={categories}
       />
-      <Footer
-          headingText={""}
-          descriptionText={blogTexts.footer.descriptionText}
-          contactEmail={blogTexts.footer.contactEmail}
-          copyrightText={blogTexts.footer.copyrightText}
-          copyrightLink={blogTexts.footer.copyrightLink}
-          logoSrc={blogTexts.footer.logoSrc}
-          socialMediaProfiles={socialMedia}
-        />
     </div>
     </>
   )

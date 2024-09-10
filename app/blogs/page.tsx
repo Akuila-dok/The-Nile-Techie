@@ -13,7 +13,7 @@ const Blogs = () => {
 <div className='relative dark: bg-slate-800 flex 
    justify-center items-center flex-col overflow-hidden
    mx-auto sm:px-10 px-5'>
-    <div className='absolute cursor-pointer top-4 bg-white rounded-lg left-4 z-50'>
+    <div className='absolute cursor-pointer top-4  rounded-lg left-4 z-50'>
           <a href="/">
             <MagicButton
               title="Home"
